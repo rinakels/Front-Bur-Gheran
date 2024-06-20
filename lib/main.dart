@@ -1,28 +1,78 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home:Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text('Bur-Gheran'),
-        ),
+void main() => runApp(MaterialApp(
+  home: Scaffold(
+    backgroundColor: Colors.white,
+    appBar: AppBar(
+      title: Text('USER PROFILE'),
+      backgroundColor: Colors.brown[300],
+      centerTitle: true,
+    ),
+    body: Padding(
+      padding: EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:<Widget>[
+          Text(
+            'NAME',
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.black,
+              letterSpacing: 2.0,
 
-        backgroundColor: Colors.amber[700],
-      ),//AppBar
-      body: Center(
-          child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6zqkscZwA-9A-ciGdwQh_1bzGaIaLg4MNSA&s')
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.amber[700],
-        child: Icon(
-          Icons.ac_unit_outlined,
-          color: Colors.black87,
-        ),
-      ),
-    ),  //Scaffold
-  ));  // MaterialApp
-}
+            ),
 
+          ),
+          Text(
+            'Rinalyn V.Oriendo',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontSize: 25.0,
+            ),
+          ),
+          SizedBox(height: 30.0,),
+          Text(
+            'YEAR',
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.black,
+              letterSpacing: 2.0,
+
+            ),
+
+          ),
+          Text(
+            'Third',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontSize: 25.0,
+            ),
+          ),
+          SizedBox(height: 30.0,),
+          Text(
+            'EMAIL',
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.black,
+              letterSpacing: 2.0,
+
+            ),
+
+          ),
+          Text(
+            'oriendovalencia@gmail.com',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontSize: 25.0,
+            ),
+          ),
+        ],
+      ),
+    ),
+
+),
+));
 
