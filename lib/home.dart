@@ -134,7 +134,7 @@ class _HomeState extends State<Home> {
                 ElevatedButton(
                     onPressed: (){
                       setState(() {
-                        year + = 1;
+                        year += 1;
                       });
                     },
                     child: Text('Add year',
