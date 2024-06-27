@@ -1,3 +1,5 @@
+import 'package:burgheran/services/menuCard.dart';
+import 'package:burgheran/services/product.dart';
 import 'package:flutter/material.dart';
 
 class Menu extends StatefulWidget {
@@ -8,10 +10,63 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
+  List products = <Product>[
+    Product(productName: "Double Longganisa Burger", price: 45.99),
+    Product(productName: "Cheese Burger", price: 39.99),
+    Product(productName: "Chicken Burger", price: 57.99),
+    Product(productName: "Regular Burger", price: 29.99),
+    Product(productName: "Double Patty Burger", price: 44.99),
+  ];
+
+  Widget cardTemplate(product){
+    return Card(
+      color: Colors.brown[300],
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget> [
+            Text(product.productName,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+              color: Colors.black,
+
+            ),
+            ),
+            Text('${product.price}',
+            style: TextStyle(
+                color: Colors.grey[800],
+            ),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('This is Menu'),
+      appBar: AppBar(
+        backgroundColor: Colors.brown[300],
+        foregroundColor: Colors.black,
+        title: Text(
+          'Menu',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: products.map((product) => Menucard(product: product)).toList(),
+        ),
+      ),
     );
   }
 }
