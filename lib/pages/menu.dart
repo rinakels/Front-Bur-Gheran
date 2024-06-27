@@ -18,33 +18,7 @@ class _MenuState extends State<Menu> {
     Product(productName: "Double Patty Burger", price: 44.99),
   ];
 
-  Widget cardTemplate(product){
-    return Card(
-      color: Colors.brown[300],
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget> [
-            Text(product.productName,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0,
-              color: Colors.black,
 
-            ),
-            ),
-            Text('${product.price}',
-            style: TextStyle(
-                color: Colors.grey[800],
-            ),
-            ),
-
-          ],
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
