@@ -52,7 +52,7 @@ class _SignupState extends State<Signup> {
                            return 'Please provide a name';
                          }
                          if(value.length < 2){
-                           return 'Email should be atleast 10 letters long';
+                           return 'Name should be atleast 10 letters long';
                          }
                          return null;
                       },
@@ -74,7 +74,7 @@ class _SignupState extends State<Signup> {
                           return 'Please provide an email';
                         }
                         if(value.length < 2){
-                          return 'Password should be atleast 10 letters long';
+                          return 'Email should be atleast 10 letters long';
                         }
                         return null;
                       },
@@ -123,9 +123,61 @@ class _SignupState extends State<Signup> {
                         foregroundColor: Colors.black
                       ),
                     ),
+                    SizedBox(height: 30.0,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget> [
+                        Text(
+                          'or sign up with',
+                          style: TextStyle(
+                              color: Colors.black
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 30.0,),
+                    ElevatedButton(
+                      onPressed: (){},
+                      child: Text('Signup with Google'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.redAccent,
+                        foregroundColor: Colors.black,
+                      ),
+                    ),
+                    SizedBox(height: 15.0,),
+                    ElevatedButton(
+                      onPressed: (){},
+                      child: Text('Signup with Facebook'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        foregroundColor: Colors.black,
+                      ),
+                    ),
                   ],
                 ),
 
+              ),
+              SizedBox(height: 30.0,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget> [
+                  Text(
+                    'Do you have an account?',
+                    style: TextStyle(
+                      color: Colors.grey[600],
+                    ),
+                  ),
+                  SizedBox(width: 5.0,),
+                  InkWell(
+                    child: Text(
+                      'Login here',
+                      style: TextStyle(
+                        color: Colors.brown,
+                      ),
+                    ),
+                    onTap: ()=> Navigator.popAndPushNamed(context, '/login'),
+                  )
+                ],
               ),
             ],
           ),
