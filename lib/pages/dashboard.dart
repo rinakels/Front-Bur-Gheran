@@ -26,22 +26,41 @@ class _DashboardState extends State<Dashboard> {
       backgroundColor: Colors.brown [300],
       body: Container(
         child: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: Image.asset(
-                'assets/burgerr.png',
-                width: 360,
-              ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+          Center(
+          child: Image.asset(
+          'assets/burgerr.png',
+            width: 360,
+          ),
+        ),
+          SizedBox(height: 20.0,),
+          ElevatedButton(
+          onPressed: (){
+            Navigator.pushNamed(context, '/menu');
+          },
+            child: Text(
+            'Menu',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
-            SizedBox(height: 5.0,),
-            ElevatedButton(
+          ),
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white,
+            backgroundColor: Colors.brown,
+          ),
+        ),
+
+          SizedBox(height: 20.0,),
+          Center(
+            child: ElevatedButton(
               onPressed: (){
-                Navigator.pushNamed(context, '/menu');
+                Navigator.pushNamed(context, '/profile');
               },
               child: Text(
-                  'Menu',
+                'Profile',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -52,69 +71,50 @@ class _DashboardState extends State<Dashboard> {
                 backgroundColor: Colors.brown,
               ),
             ),
-            SizedBox(height: 20.0,),
-            Center(
-              child: ElevatedButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/profile');
-                  },
-                child: Text(
-                  'Profile',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.brown,
+          ),
+          SizedBox(height: 20.0,),
+          Center(
+            child: ElevatedButton(
+              onPressed: (){
+                Navigator.pushNamed(context, '/login');
+              },
+              child: Text(
+                'Log in',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-            SizedBox(height: 20.0,),
-            Center(
-              child: ElevatedButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/login');
-                  },
-                child: Text(
-                  'Log in',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.brown,
-                ),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.brown,
               ),
             ),
-            SizedBox(height: 20.0,),
-            Center(
-              child: ElevatedButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/signup');
-                    },
-                child: Text(
-                  'Sign up',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.brown,
+          ),
+          SizedBox(height: 20.0,),
+          Center(
+            child: ElevatedButton(
+              onPressed: (){
+                Navigator.pushNamed(context, '/signup');
+              },
+              child: Text(
+                'Sign up',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.brown,
+              ),
             ),
+          ),
 
           ],
         ),
-        ),
       ),
+    ),
     );
-
   }
 }
