@@ -45,7 +45,8 @@ class _SignupState extends State<Signup> {
                         label: Text('Name'),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0)
-                        )
+                        ),
+                        prefixIcon: Icon(Icons.person),
                       ),
                       validator: (value){
                          if(value == null || value.isEmpty){
@@ -60,14 +61,15 @@ class _SignupState extends State<Signup> {
                         name = value!;
                       },
                     ),
-                    SizedBox(height: 30.0,),
+                    SizedBox(height: 25.0,),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           label: Text('Email'),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20.0)
-                          )
+                          ),
+                        prefixIcon: Icon(Icons.email),
                       ),
                       validator: (value){
                         if(value == null || value.isEmpty){
@@ -89,7 +91,8 @@ class _SignupState extends State<Signup> {
                           label: Text('Password'),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20.0)
-                          )
+                          ),
+                        prefixIcon: Icon(Icons.lock),
                       ),
                       validator: (value){
                         if(value == null || value.isEmpty){
@@ -117,7 +120,7 @@ class _SignupState extends State<Signup> {
                             print(password);
                           }
                         },
-                        child: Text('Sign Up'),
+                        child: Text('Create Account'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.brown[200],
                         foregroundColor: Colors.black
@@ -136,18 +139,20 @@ class _SignupState extends State<Signup> {
                       ],
                     ),
                     SizedBox(height: 30.0,),
-                    ElevatedButton(
+                    ElevatedButton.icon(
                       onPressed: (){},
-                      child: Text('Signup with Google'),
+                      icon:Icon(Icons.login),
+                      label: Text('Log in with Google'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.redAccent,
                         foregroundColor: Colors.black,
                       ),
                     ),
                     SizedBox(height: 15.0,),
-                    ElevatedButton(
+                    ElevatedButton.icon(
                       onPressed: (){},
-                      child: Text('Signup with Facebook'),
+                      icon: Icon(Icons.facebook),
+                      label: Text('Log in with Facebook'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
                         foregroundColor: Colors.black,
@@ -172,7 +177,7 @@ class _SignupState extends State<Signup> {
                     child: Text(
                       'Login here',
                       style: TextStyle(
-                        color: Colors.brown,
+                        color: Colors.brown[700],
                       ),
                     ),
                     onTap: ()=> Navigator.popAndPushNamed(context, '/login'),

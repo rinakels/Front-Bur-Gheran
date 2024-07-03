@@ -22,7 +22,7 @@ class _LoginState extends State<Login> {
           child: Column (
             children: <Widget> [
               Text(
-                'Log in your account',
+                'Hi! Welcome Back',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   letterSpacing: 2.0,
@@ -42,7 +42,9 @@ class _LoginState extends State<Login> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0)
                         ),
+                        prefixIcon: Icon(Icons.email),
                       ),
+
                       validator: (value){
                         if(value == null || value.isEmpty){
                           return 'Please provide an email';
@@ -64,6 +66,7 @@ class _LoginState extends State<Login> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0)
                               ),
+                            prefixIcon: Icon(Icons.lock),
                             ),
                             validator: (value){
                               if(value == null || value.isEmpty){
@@ -109,18 +112,20 @@ class _LoginState extends State<Login> {
                            ],
                          ),
                          SizedBox(height: 25.0,),
-                         ElevatedButton(
+                         ElevatedButton.icon(
                              onPressed: (){},
-                             child: Text('Login with Google'),
+                             icon: Icon(Icons.login),
+                             label: Text('Sign in with Google'),
                            style: ElevatedButton.styleFrom(
                              backgroundColor: Colors.redAccent,
                              foregroundColor: Colors.black,
                            ),
                          ),
                     SizedBox(height: 25.0,),
-                    ElevatedButton(
+                    ElevatedButton.icon(
                         onPressed: (){},
-                        child: Text('Login with Facebook'),
+                        icon: Icon(Icons.facebook),
+                        label: Text('Sign in with Facebook'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
                         foregroundColor: Colors.black,
