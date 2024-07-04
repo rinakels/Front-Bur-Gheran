@@ -8,7 +8,7 @@ import 'package:burgheran/pages/login.dart';
 
 
 void main() => runApp(MaterialApp(
-  initialRoute: '/menu',
+  initialRoute: '/login',
   routes: {
     '/' : (context) => Dashboard(),
     '/menu' : (context) => Menu(),

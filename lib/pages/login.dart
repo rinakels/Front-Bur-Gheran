@@ -15,12 +15,19 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.brown[100],
       body: SafeArea (
         child: Padding (
           padding: EdgeInsets.fromLTRB(15.0, 50.0, 10.0, 0),
           child: Column (
             children: <Widget> [
+              Center(
+                child: Image.asset(
+                  'assets/burgerr.png',
+                  width: 200.0,
+                ),
+              ),
               Text(
                 'Hi! Welcome Back',
                 style: TextStyle(
@@ -91,6 +98,7 @@ class _LoginState extends State<Login> {
                                   formKey.currentState!.save();
                                   print (email);
                                   print(password);
+                                  Navigator.pushReplacementNamed(context, '/');
                                 }
                               },
                               child: Text('Log In'),
