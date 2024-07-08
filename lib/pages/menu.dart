@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:burgheran/pages/selectedProduct.dart';
 import 'package:burgheran/services/menuCard.dart';
 import 'package:burgheran/services/product.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +93,14 @@ class _MenuState extends State<Menu> {
                               ),
                             ],
                           ),
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                              MaterialPageRoute(
+                                  builder: (context) => SelectedProduct(product: products[index]),
+                              )
+                            );
+                          },
                         ),
                       );
                     }
