@@ -76,7 +76,7 @@ class _SelectedProductState extends State<SelectedProduct> {
                   IconButton(
                       onPressed: (){
                         setState(() {
-                          numberOfOrders += 1;
+                          numberOfOrders +=   1;
                           totalAmount = product.price * numberOfOrders;
                         });
                       },
