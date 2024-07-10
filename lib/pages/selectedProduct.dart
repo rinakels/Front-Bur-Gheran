@@ -50,6 +50,23 @@ class _SelectedProductState extends State<SelectedProduct> {
                   child: Image.network(
                       product.url,
                     fit: BoxFit.cover,
+                    loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                        if (loadingProgress == null) {
+                          return child;
+                        }
+                        return Center(
+                          child: CircularProgressIndicator(
+                            value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                              : null,
+                          ),
+                        );
+                    },
+                    errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace){
+                        return Center(
+                          child: Icon(Icons.error),
+                        );
+                    },
                   ),
               ),
               SizedBox(height: 5.0,),
