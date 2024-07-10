@@ -17,7 +17,7 @@ class Menu extends StatefulWidget {
 class _MenuState extends State<Menu> {
   late Future<List<dynamic>> products;
   Future<List <dynamic>>fetchData() async {
-    final response = await http.get(Uri.parse('http://10.0.2.2:8080/products')
+    final response = await http.get(Uri.parse('http://10.0.2.2:8080/api/v1/product/all')
     );
     final data = jsonDecode(response.body);
     print(data);
@@ -39,8 +39,9 @@ class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.brown[100],
       appBar: AppBar(
-        backgroundColor: Colors.brown[300],
+        backgroundColor: Colors.brown,
         foregroundColor: Colors.black,
         title: Text(
           'Menu',

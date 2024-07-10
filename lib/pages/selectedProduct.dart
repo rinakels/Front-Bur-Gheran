@@ -14,6 +14,7 @@ class _SelectedProductState extends State<SelectedProduct> {
   late double totalAmount;
   int numberOfOrders = 1;
 
+
   _SelectedProductState({required this.product});
 
   @override
@@ -25,8 +26,9 @@ class _SelectedProductState extends State<SelectedProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.brown[100],
       appBar: AppBar(
-        backgroundColor: Colors.brown[300],
+        backgroundColor: Colors.brown,
         foregroundColor: Colors.black,
         title: Text(
           'Order',
@@ -40,16 +42,41 @@ class _SelectedProductState extends State<SelectedProduct> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text(widget.product.productName),
-              Text(widget.product.description),
+              Container(
+                width: 400,
+                  height: 300,
+                  child: Image.network(
+                      product.url,
+                    fit: BoxFit.cover,
+                  ),
+              ),
+              SizedBox(height: 5.0,),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                      widget.product.productName,
+                          style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold
+                          ),
+                  ),
+                  SizedBox(height: 2.0,)
+
+                ],
+              ),
+              Text(widget.product.description,
+              textAlign: TextAlign.center,),
             ],
           ),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                  '₱ ${totalAmount.toString()}',
+                  '₱ ${totalAmount.toStringAsFixed(2)}',
                 style: TextStyle(
                   fontSize: 20.0,
                 ),
